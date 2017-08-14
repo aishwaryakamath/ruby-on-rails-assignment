@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <title>List of Books Available</title>
+  </head>
+<body>
+
+  <div class="header">
+    <div class="container">
+      <ul class="nav">
+        <a href="#"><li>List</li></a>
+        <a href="#"><li>Edit</li></a>
+        <a href="#"><li>Delete</li></a>
+        <a href="#"><li>Contact</li></a>
+      </ul>
+    </div>
+  </div>
+  
+  
+  <div class="jumbotron">
+    <div class="container">  
+      <div class="main">
+        <h1>Scroll down to check out the list of books</h1>
+      </div>
+    </div>
+  </div>
+  <br/>
+
+<table class="table" cellspacing="30">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+  </tr>
+
+	
+<% for book in @books %>
+  <tr>
+    <td><%=h book.name %></td>
+    <td><%=h book.description %></td>
+    <td><%=h book.price %></td>
+   <!-- <td><%= link_to 'Show', book %></td>-->
+    <td><%= link_to 'Edit', edit_book_path(book) %></td>
+    <td><%= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<div class="style">
+<h4 class="style">Enter a New Book to the collection</h4>
+<%= link_to 'Add a New book', new_book_path %>
+</div>
+
+
+
+<br/>
+ <div class="supporting">
+    <div class="container">
+
+      <div class="col">
+        <img src="https://www.shareicon.net/data/64x64/2015/09/19/642990_watch_512x512.png">
+        <h2>Show</h2>
+        <p>Have a look at all the books that are available.</p>
+       
+      </div>
+
+      <div class="col">
+        <img src="https://s3.amazonaws.com/codecademy-content/projects/broadway/develop.svg">
+        <h2>Edit</h2>
+        <p>Update the information about each book.</p>
+        
+      </div>
+
+      <div class="col">
+        <img src="https://www.shareicon.net/data/64x64/2015/10/30/664154_delete_512x512.png">
+        <h2>Destroy</h2>
+        <p>Delete a book when its not available.</p>
+        
+      </div>
+
+    </div>
+    <div class="clearfix"></div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+	<p>Thanks for scrolling...</p>
+      <p>&copy; Books 2017</p>
+    </div>
+  </div>
+  
+ 
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    
+	<%= stylesheet_link_tag 'edit' %>
+  </head>
+<body>
+
+  <div class="header">
+    <div class="container">
+      <ul class="nav">
+         <a href="#"><li>List</li></a>
+        <a href="#"><li>Edit</li></a>
+        <a href="#"><li>Delete</li></a>
+        <a href="#"><li>Contact</li></a>
+      </ul>
+    </div>
+  </div>
+
+  
+   <div class="jumbotron">
+    <div class="container">  
+      <div class="main">
+
+<h1>Editing book</h1>
+
+<%= error_messages_for :book %>
+
+<% form_for(@book) do |f| %>
+  <p>
+    <b>Name</b><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <b>Description</b><br />
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <b>Price</b><br />
+    <%= f.text_field :price %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', books_path %>
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+  <br/>
+  
+  
+  
+  
+<br/>
+ <div class="supporting">
+    <div class="container">
+
+      <div class="col">
+        <img src="https://www.shareicon.net/data/64x64/2015/09/19/642990_watch_512x512.png">
+        <h2>Show</h2>
+        <p>Have a look at all the books that are available.</p>
+       
+      </div>
+
+      <div class="col">
+        <img src="https://s3.amazonaws.com/codecademy-content/projects/broadway/develop.svg">
+        <h2>Edit</h2>
+        <p>Update the information about each book.</p>
+        
+      </div>
+
+      <div class="col">
+        <img src="https://www.shareicon.net/data/64x64/2015/10/30/664154_delete_512x512.png">
+        <h2>Destroy</h2>
+        <p>Delete a book when its not available.</p>
+        
+      </div>
+
+    </div>
+    <div class="clearfix"></div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+	<p>Thanks for scrolling...</p>
+      <p>&copy; Books 2017</p>
+    </div>
+  </div>
+  
+ 
+</body>
+</html>
